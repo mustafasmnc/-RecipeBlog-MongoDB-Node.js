@@ -7,5 +7,6 @@ const receipeController=require('../controllers/recipeController');
 */
 router.get('/',receipeController.homePage);
 router.get('/categories',receipeController.exploreCategories);
+router.get('/recipe/:id',receipeController.exploreRecipe);
 
 module.exports=router;
