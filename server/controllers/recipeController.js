@@ -89,6 +89,21 @@ exports.searchRecipe = async (req, res) => {
 }
 
 
+/**
+ * GET /explore-latest
+ * Explore latest 
+*/
+exports.exploreLatest = async (req, res) => {
+    try {
+        const limit = 20;
+        const recipe = await Recipe.find({}).sort({ _id: -1 }).limit(limit);
+        res.render('explore-latest', { title: 'Cooking Blog - Explore Latest', recipe });
+    } catch (error) {
+        res.status(500).send({ message: error.message || "Error Occured" });
+    }
+
+}
+
 
 // async function insertDymmyCategoryData(){
 //     try {

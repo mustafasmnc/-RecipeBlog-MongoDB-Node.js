@@ -10,5 +10,6 @@ router.get('/recipe/:id',receipeController.exploreRecipe);
 router.get('/categories',receipeController.exploreCategories);
 router.get('/categories/:id',receipeController.exploreCategoriesById);
 router.post('/search',receipeController.searchRecipe);
+router.get('/explore-latest',receipeController.exploreLatest);
 
 module.exports=router;
