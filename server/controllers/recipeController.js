@@ -5,5 +5,5 @@
  * HomePage 
 */
 exports.homePage=async (req, res)=>{
-    res.render('index');
+    res.render('index',{title:'Cooking Blog - Home'});
 }
