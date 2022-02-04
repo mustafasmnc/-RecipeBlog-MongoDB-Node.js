@@ -4,7 +4,14 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+        <% if(typeof categoryById !=='undefined' && categoryById.length> 0){ %>
+            <li class="breadcrumb-item active" aria-current="page">
+                <%= categoryById[0].category %>
+            </li>
+            <% }else{%>
+                <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+                <% }%>
+
     </ol>
 </nav>
 
@@ -36,7 +43,7 @@
                 </div>
             </a>
             <% }) %>
-                <% } else{%>
+                <% } else if(typeof categories==='undefined' && categories.length<=0){%>
                     <p>No items found</p>
                     <% } %>
 
